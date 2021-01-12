@@ -1,0 +1,21 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{formset.management_form }}
+                {% for form in formset %}
+                    <hr>
+                    {{form}}
+                {% endfor %}
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}    
+
